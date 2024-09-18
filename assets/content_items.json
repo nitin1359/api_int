@@ -1,0 +1,146 @@
+[
+    {
+      "id": "1",
+      "imageUrl": "https://picsum.photos/400/300?random=5", 
+      "title": "Green plant in vase",
+      "description": "A beautiful green plant in a minimalist vase.",
+      "user": {
+        "username": "greenthumb",
+        "profileImage": "https://picsum.photos/50/50?random=6"
+      },
+      "likes": 123,
+      "comments": 5
+    },
+    {
+      "id": "2",
+      "imageUrl": "https://picsum.photos/400/300?random=7",
+      "title": "Customize with hand embroidery",
+      "description": "Learn how to personalize your clothing with hand embroidery.",
+      "user": {
+        "username": "stitchy_art",
+        "profileImage": "https://picsum.photos/50/50?random=8"
+      },
+      "likes": 250,
+      "comments": 10
+    },
+    {
+      "id": "3",
+      "imageUrl": "https://picsum.photos/400/300?random=9",
+      "title": "Blueberry cream cheese bites",
+      "description": "A simple and delicious recipe for blueberry cream cheese bites.",
+      "user": {
+        "username": "foodie_adventures",
+        "profileImage": "https://picsum.photos/50/50?random=10"
+      },
+      "likes": 400,
+      "comments": 15
+    },
+    {
+      "id": "4",
+      "imageUrl": "https://picsum.photos/400/300?random=11",
+      "title": "Rustic bathroom design",
+      "description": "Explore ideas for creating a rustic and cozy bathroom.",
+      "user": {
+        "username": "home_decor_love",
+        "profileImage": "https://picsum.photos/50/50?random=12"
+      },
+      "likes": 300,
+      "comments": 8
+    },
+    {
+      "id": "5",
+      "imageUrl": "https://picsum.photos/400/300?random=13", 
+      "title": "Sunset over the mountains",
+      "description": "A breathtaking view of the sunset over majestic mountains.",
+      "user": {
+        "username": "travel_photography",
+        "profileImage": "https://picsum.photos/50/50?random=14"
+      },
+      "likes": 500,
+      "comments": 20
+    },
+    {
+      "id": "6",
+      "imageUrl": "https://picsum.photos/400/300?random=15",
+      "title": "DIY Macrame Wall Hanging",
+      "description": "Learn how to create your own beautiful macrame wall hanging.",
+      "user": {
+        "username": "boho_crafts",
+        "profileImage": "https://picsum.photos/50/50?random=16"
+      },
+      "likes": 280,
+      "comments": 12
+    },
+    {
+      "id": "7",
+      "imageUrl": "https://picsum.photos/400/300?random=17",
+      "title": "Cozy Reading Nook",
+      "description": "Create the perfect reading nook for relaxing and enjoying your favorite books.",
+      "user": {
+        "username": "booklover_home",
+        "profileImage": "https://picsum.photos/50/50?random=18"
+      },
+      "likes": 350,
+      "comments": 18
+    },
+    {
+      "id": "8",
+      "imageUrl": "https://picsum.photos/400/300?random=19",
+      "title": "Delicious Chocolate Cake",
+      "description": "A decadent chocolate cake recipe that will satisfy your sweet tooth.",
+      "user": {
+        "username": "baking_withlove",
+        "profileImage": "https://picsum.photos/50/50?random=20"
+      },
+      "likes": 600,
+      "comments": 25
+    },
+    {
+      "id": "9",
+      "imageUrl": "https://picsum.photos/400/300?random=21",
+      "title": "Minimalist Kitchen Design",
+      "description": "Get inspiration for a sleek and functional minimalist kitchen.",
+      "user": {
+        "username": "design_lover",
+        "profileImage": "https://picsum.photos/50/50?random=22"
+      },
+      "likes": 450,
+      "comments": 16
+    },
+    {
+      "id": "10",
+      "imageUrl": "https://picsum.photos/400/300?random=23",
+      "title": "DIY Painted Furniture",
+      "description": "Transform old furniture with a fresh coat of paint and give it new life.",
+      "user": {
+        "username": "upcycle_artist",
+        "profileImage": "https://picsum.photos/50/50?random=24"
+      },
+      "likes": 220,
+      "comments": 9
+    },
+    {
+      "id": "11",
+      "imageUrl": "https://picsum.photos/400/300?random=25",
+      "title": "Stunning Waterfall Hike",
+      "description": "Explore a scenic hike leading to a magnificent waterfall.",
+      "user": {
+        "username": "nature_explorer",
+        "profileImage": "https://picsum.photos/50/50?random=26"
+      },
+      "likes": 700,
+      "comments": 30
+    },
+    {
+      "id": "12",
+      "imageUrl": "https://picsum.photos/400/300?random=27",
+      "title": "Easy Paper Crafts",
+      "description": "Learn simple and fun paper crafts for all ages.",
+      "user": {
+        "username": "craft_fun",
+        "profileImage": "https://picsum.photos/50/50?random=28"
+      },
+      "likes": 180,
+      "comments": 7
+    }
+  ]

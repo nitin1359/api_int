@@ -1,0 +1,32 @@
+[
+    {
+      "id": "1",
+      "username": "mariehd22",
+      "imageUrl": "https://picsum.photos/200/300?random=1"
+    },
+    {
+      "id": "2",
+      "username": "cheffado",
+      "imageUrl": "https://picsum.photos/200/300?random=2"
+    },
+    {
+      "id": "3",
+      "username": "bitable",
+      "imageUrl": "https://picsum.photos/200/300?random=3"
+    },
+    {
+      "id": "4",
+      "username": "naniaphoto",
+      "imageUrl": "https://picsum.photos/200/300?random=4"
+    },
+    {
+      "id": "5",
+      "username": "travelbug",
+      "imageUrl": "https://picsum.photos/200/300?random=5"
+    },
+    {
+      "id": "6",
+      "username": "art_lover",
+      "imageUrl": "https://picsum.photos/200/300?random=6"
+    }
+  ]
