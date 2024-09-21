@@ -16,26 +16,55 @@ class ApiService {
     return jsonData.map((item) => Story.fromJson(item)).toList();
   }
 
-  Future<List<ContentItem>> getContentItems() async {
-    try {
-      final response = await dio.get('http://3.108.196.16/internal/mock?page=1&pageSize=5'); 
-      if (response.statusCode == 200) {
-        final data = response.data;
-        final contentItems = data['stories'] as List<dynamic>; 
-        return contentItems.map((item) => ContentItem.fromJson(item)).toList();
-      } else {
-        _showSnackbar('Error', 'Failed to fetch content items. Status code: ${response.statusCode}', Colors.red);
-        return []; 
-      }
-    } catch (error) {
-      _showSnackbar('Error', 'Network error: ${error.toString()}', Colors.red);
-      return []; 
+  Future<List<ContentItem>> getContentItems(int page) async {
+  try {
+    final response = await dio.get('http://3.108.196.16/internal/mock?page=$page&pageSize=5');
+    
+    if (response.statusCode == 200) {
+      final data = response.data;
+      final contentItems = data['stories'] as List<dynamic>;
+      return contentItems.map((item) => ContentItem.fromJson(item)).toList();
+    } else {
+      _handleHttpError(response.statusCode!);
     }
+  } on DioException catch (dioException) {
+    _handleDioError(dioException);
+  } catch (error) {
+    _showSnackbar('Error', 'An unknown error occurred: ${error.toString()}', Colors.red);
   }
+
+  return []; 
+}
+
+void _handleHttpError(int statusCode) {
+  switch (statusCode) {
+    case 400:
+      _showSnackbar('Error', 'Bad Request. Please try again later.', Colors.red);
+      break;
+    case 401:
+      _showSnackbar('Unauthorized', 'You are not authorized. Please login.', Colors.orange);
+      break;
+    case 500:
+      _showSnackbar('Server Error', 'Internal server error. Try again later.', Colors.red);
+      break;
+    default:
+      _showSnackbar('Error', 'Unexpected error: $statusCode', Colors.red);
+  }
+}
+
+void _handleDioError(DioException dioException) {
+  if (dioException.type == DioExceptionType.connectionTimeout ||
+      dioException.type == DioExceptionType.receiveTimeout ||
+      dioException.type == DioExceptionType.connectionError) {
+    _showSnackbar('Network Error', 'Please check your internet connection.', Colors.red);
+  } else {
+    _showSnackbar('Error', 'Unexpected error: ${dioException.message}', Colors.red);
+  }
+}
 
   void _showSnackbar(String title, String message, Color backgroundColor) {
     Get.snackbar(
-      title, 
+      title,
       message,
       backgroundColor: backgroundColor,
       colorText: Colors.white,

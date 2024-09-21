@@ -25,14 +25,14 @@ class DetailScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  const Row(
                     children: [
                       // CircleAvatar(
                       //   backgroundImage:
                       //       NetworkImage(contentItem.user.profileImage),
                       //   radius: 20,
                       // ),
-                      const SizedBox(width: 8),
+                      SizedBox(width: 8),
                       // Text(contentItem.user.username),
                     ],
                   ),
@@ -47,14 +47,14 @@ class DetailScreen extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(contentItem.content),
                   const SizedBox(height: 16),
-                  Row(
+                  const Row(
                     children: [
-                      const Icon(Icons.favorite),
-                      const SizedBox(width: 4),
+                      Icon(Icons.favorite),
+                      SizedBox(width: 4),
                       // Text('${contentItem.likes}'),
-                      const SizedBox(width: 16),
-                      const Icon(Icons.comment),
-                      const SizedBox(width: 4),
+                      SizedBox(width: 16),
+                      Icon(Icons.comment),
+                      SizedBox(width: 4),
                       // Text('${contentItem.comments}'),
                     ],
                   ),

@@ -7,20 +7,45 @@ class HomeController extends GetxController {
   final ApiService _apiService = ApiService();
   RxList<Story> stories = <Story>[].obs;
   RxList<ContentItem> contentItems = <ContentItem>[].obs;
-  int currentPage = 1;
+  var isLoading = false.obs; 
+  var hasError = false.obs;
+  var currentPage = 1.obs;
+  final int totalPages = 3;
 
   @override
   void onInit() {
     super.onInit();
     fetchStories();
-    fetchContentItems();
+    loadMoreContent();
   }
 
   Future<void> fetchStories() async {
     stories.value = await _apiService.getStories();
   }
 
-  Future<void> fetchContentItems() async {
-    contentItems.value = await _apiService.getContentItems();
+  void loadMoreContent() async {
+    if (currentPage.value <= totalPages) {
+      isLoading.value = true;
+      hasError.value = false; 
+
+      try {
+        List<ContentItem> newContent = await _apiService.getContentItems(currentPage.value);
+        if (newContent.isNotEmpty) {
+          contentItems.addAll(newContent);
+          currentPage.value++;
+        }
+      } catch (error) {
+        hasError.value = true;
+      } finally {
+        isLoading.value = false;
+      }
+    }
   }
+
+  void retryLoadingContent() {
+    if (hasError.value) {
+      loadMoreContent();
+    }
+  }
+  
 }
