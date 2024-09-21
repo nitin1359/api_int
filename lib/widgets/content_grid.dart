@@ -13,7 +13,8 @@ class ContentGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Obx(() => NotificationListener<ScrollNotification>(
           onNotification: (ScrollNotification scrollInfo) {
-            if (scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent &&
+            if (scrollInfo.metrics.pixels ==
+                    scrollInfo.metrics.maxScrollExtent &&
                 !controller.isLoading.value) {
               controller.loadMoreContent();
             }
@@ -26,7 +27,8 @@ class ContentGrid extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
             ),
-            itemCount: controller.contentItems.length + (controller.isLoading.value ? 1 : 0),
+            itemCount: controller.contentItems.length +
+                (controller.isLoading.value ? 1 : 0),
             itemBuilder: (context, index) {
               if (index < controller.contentItems.length) {
                 final item = controller.contentItems[index];
@@ -46,11 +48,21 @@ class ContentGrid extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Center(
-                            child: CachedNetworkImage(
-                              imageUrl: item.thumbnail,
+                            child: Image.network(
+                              item.thumbnail,
                               fit: BoxFit.cover,
-                              placeholder: (context, url) => const CircularProgressIndicator(),
-                              errorWidget: (context, url, error) => const Icon(Icons.error),
+                              loadingBuilder:
+                                  (context, child, loadingProgress) {
+                                if (loadingProgress == null) {
+                                  return child;
+                                } else {
+                                  return const Center(
+                                      child: CircularProgressIndicator());
+                                }
+                              },
+                              errorBuilder: (context, error, stackTrace) {
+                                return const Icon(Icons.error);
+                              },
                             ),
                           ),
                         ),
@@ -66,7 +78,7 @@ class ContentGrid extends StatelessWidget {
                   ),
                 );
               } else {
-                return const Center(child: CircularProgressIndicator()); 
+                return const Center(child: CircularProgressIndicator());
               }
             },
           ),
