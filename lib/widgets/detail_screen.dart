@@ -19,7 +19,7 @@ class DetailScreen extends StatelessWidget {
             Center(
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
-                    child: Image.network(contentItem.imageUrl))),
+                    child: Image.network(contentItem.thumbnail))),
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
@@ -27,13 +27,13 @@ class DetailScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      CircleAvatar(
-                        backgroundImage:
-                            NetworkImage(contentItem.user.profileImage),
-                        radius: 20,
-                      ),
+                      // CircleAvatar(
+                      //   backgroundImage:
+                      //       NetworkImage(contentItem.user.profileImage),
+                      //   radius: 20,
+                      // ),
                       const SizedBox(width: 8),
-                      Text(contentItem.user.username),
+                      // Text(contentItem.user.username),
                     ],
                   ),
                   const SizedBox(height: 8),
@@ -45,17 +45,17 @@ class DetailScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Text(contentItem.description),
+                  Text(contentItem.content),
                   const SizedBox(height: 16),
                   Row(
                     children: [
                       const Icon(Icons.favorite),
                       const SizedBox(width: 4),
-                      Text('${contentItem.likes}'),
+                      // Text('${contentItem.likes}'),
                       const SizedBox(width: 16),
                       const Icon(Icons.comment),
                       const SizedBox(width: 4),
-                      Text('${contentItem.comments}'),
+                      // Text('${contentItem.comments}'),
                     ],
                   ),
                 ],

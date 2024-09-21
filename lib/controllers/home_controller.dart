@@ -7,6 +7,7 @@ class HomeController extends GetxController {
   final ApiService _apiService = ApiService();
   RxList<Story> stories = <Story>[].obs;
   RxList<ContentItem> contentItems = <ContentItem>[].obs;
+  int currentPage = 1;
 
   @override
   void onInit() {

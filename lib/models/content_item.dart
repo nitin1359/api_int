@@ -1,33 +1,17 @@
-import 'package:api_int/models/user.dart';
-
 class ContentItem {
   final String id;
-  final String imageUrl;
+  final String thumbnail;
   final String title;
-  final String description;
-  final User user;
-  final int likes;
-  final int comments;
+  final String content;
 
-  ContentItem({
-    required this.id,
-    required this.imageUrl,
-    required this.title,
-    required this.description,
-    required this.user,
-    required this.likes,
-    required this.comments,
-  });
+  ContentItem({required this.id, required this.thumbnail, required this.title, required this.content});
 
   factory ContentItem.fromJson(Map<String, dynamic> json) {
     return ContentItem(
       id: json['id'],
-      imageUrl: json['imageUrl'],
+      thumbnail: json['thumbnail'],
       title: json['title'],
-      description: json['description'],
-      user: User.fromJson(json['user']),
-      likes: json['likes'],
-      comments: json['comments'],
+      content: json['content'],
     );
   }
 }
